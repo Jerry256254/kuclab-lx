@@ -1,0 +1,12 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
+type: os-release
+properties:
+  NAME: KucLab LX
+  PRETTY_NAME: KucLab LX
+  ID: kuclab-lx
+  ID_LIKE: fedora
+  VARIANT: GNOME
+  VARIANT_ID: gnome
+  HOME_URL: https://kuclab.example.com
+  BUG_REPORT_URL: https://kuclab.example.com/support

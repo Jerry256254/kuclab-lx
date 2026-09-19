@@ -1,0 +1,38 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
+# Minimalni sada RPM: terminal, Brave, VPN, Wine/Proton vrstva pro WinShit,
+# knihovny pro nase GTK aplikace. Zbytek jede jako flatpak.
+type: dnf
+repos:
+  files:
+    add:
+      - https://repository.mullvad.net/rpm/stable/mullvad.repo
+      - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+  keys:
+    - https://repository.mullvad.net/rpm/mullvad-keyring.asc
+    - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+install:
+  packages:
+    # terminal (jednoduchy, rychly)
+    - ptyxis
+    # prohlizec: originalni Brave (free), DuckDuckGo se nastavuje pres policy
+    - brave-browser
+    # vpn
+    - mullvad-vpn
+    # WinShit: Wine/Proton vrstva (umu spousti proton-ge buildy)
+    - wine-core
+    - winetricks
+    - umu-launcher
+    # behove knihovny pro KucLab aplikace (GTK4 + GObject introspekce)
+    - python3-gobject
+    - gtk4
+    - libadwaita
+    - libflatpak
+    - appstream
+    - pipewire-utils
+remove:
+  packages:
+    # pryc s duplicitnim obchodem, mame vlastni Store
+    - gnome-software
+    - gnome-software-rpm-ostree
+  auto-remove: false

@@ -1,0 +1,14 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+# Univerzalni podpora hardware: akmods od Universal Blue + closed/open drivery.
+# Cil: wifi, usb, grafiky i periferie funguji bez zasahu uzivatele.
+modules:
+  - type: akmods
+    base: main
+    install:
+      - xpadneo
+      - xone
+      - openrazer
+      - framework-laptop
+      - v4l2loopback
+    nvidia-driver: nvidia-open

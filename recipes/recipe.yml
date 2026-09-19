@@ -1,0 +1,17 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+name: kuclab-lx
+description: KucLab LX — cista, rychla GNOME distribuce s lokalnim AI agentem.
+base-image: ghcr.io/ublue-os/bluefin
+image-version: latest
+
+modules:
+  - from-file: common/base.yml
+  - from-file: common/drivers.yml
+  - from-file: common/desktop.yml
+  - from-file: common/packages.yml
+  - from-file: common/flatpaks.yml
+  - from-file: common/kuclab.yml
+  # branding je schvalne posledni (zmena ID muze rozbit COPR v derivovanych krocich)
+  - from-file: common/branding.yml
+  - type: signing

@@ -1,0 +1,13 @@
+[Unit]
+Description=KucLab LX first boot setup
+ConditionFirstBoot=yes
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/lib/kuclab/firstboot.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

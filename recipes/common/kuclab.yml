@@ -1,0 +1,26 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+# Nase vrstva: soubory aplikaci, binarky AI (Ollama, whisper, Piper),
+# systemd unity a rozsireni GNOME.
+modules:
+  - type: files
+    files:
+      - source: system
+        destination: /
+
+  - type: script
+    scripts:
+      - install-ollama.sh
+      - install-voice.sh
+      - compile-locales.sh
+      - kuclab-permissions.sh
+
+  - type: systemd
+    system:
+      enabled:
+        - kuclab-firstboot.service
+    user:
+      enabled:
+        - ollama.service
+        - kuclab-agent.service
+        - kuclab-enable-extension.service

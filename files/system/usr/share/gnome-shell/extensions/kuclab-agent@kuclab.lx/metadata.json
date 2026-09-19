@@ -1,0 +1,7 @@
+{
+  "uuid": "kuclab-agent@kuclab.lx",
+  "name": "KucLab Agent",
+  "description": "Tlacitko a zkratka pro KucLab AI agenta",
+  "shell-version": ["45", "46", "47", "48"],
+  "version": 1
+}

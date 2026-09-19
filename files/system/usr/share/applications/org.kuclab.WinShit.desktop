@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=WinShit
+Comment=Beh Windows aplikaci
+Exec=winshit
+Icon=org.kuclab.WinShit
+Terminal=false
+Type=Application
+Categories=System;Emulator;
+StartupWMClass=org.kuclab.WinShit

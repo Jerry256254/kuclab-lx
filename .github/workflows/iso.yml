@@ -1,0 +1,45 @@
+name: KucLab LX ISO
+# Postavi instalacni ISO z publikovaneho obrazu a nahraje ho jako artifact.
+# Spousti se rucne (Actions -> KucLab LX ISO -> Run workflow) nebo automaticky
+# po uspesnem buildu obrazu na mainu.
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["KucLab LX image"]
+    types: [completed]
+    branches: [main]
+
+jobs:
+  iso:
+    name: Build ISO
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    permissions:
+      contents: read
+      packages: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Uvolni misto na runneru
+        uses: easimon/maximize-build-space@master
+        with:
+          root-reserve-mb: 20480
+          remove-dotnet: "true"
+          remove-android: "true"
+          remove-haskell: "true"
+
+      - name: Nainstaluj BlueBuild CLI
+        run: docker run --pull always --rm ghcr.io/blue-build/cli:latest-installer | sudo bash
+
+      - name: Prihlas se do GHCR
+        run: echo "${{ github.token }}" | sudo podman login ghcr.io -u "${{ github.actor }}" --password-stdin
+
+      - name: Postav ISO
+        run: sudo bluebuild generate-iso --iso-name kuclab-lx.iso image ghcr.io/${{ github.repository_owner }}/kuclab-lx:latest
+
+      - name: Nahraj ISO
+        uses: actions/upload-artifact@v4
+        with:
+          name: kuclab-lx-iso
+          path: kuclab-lx.iso
+          retention-days: 14

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.kuclab-agent" path="/org/gnome/shell/extensions/kuclab-agent/">
+    <key name="kuclab-agent-chat" type="as">
+      <default><![CDATA[['<Super>k']]]></default>
+      <summary>Otevrit chat agenta</summary>
+    </key>
+  </schema>
+</schemalist>

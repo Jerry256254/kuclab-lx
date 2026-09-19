@@ -1,0 +1,12 @@
+[Unit]
+Description=Enable KucLab agent extension on first login
+After=graphical-session.target
+ConditionPathExists=!%h/.config/kuclab/.ext-enabled
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c '/usr/bin/gnome-extensions enable kuclab-agent@kuclab.lx; mkdir -p %h/.config/kuclab && touch %h/.config/kuclab/.ext-enabled'
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=KucLab Agent
+Comment=AI asistent systemu
+Exec=kuclab-agent --chat
+Icon=org.kuclab.AgentChat
+Terminal=false
+Type=Application
+Categories=Utility;
+StartupWMClass=org.kuclab.AgentChat

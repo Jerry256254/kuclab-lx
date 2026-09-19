@@ -1,0 +1,10 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
+# Prohlizec je nativni Brave (RPM) s DuckDuckGo pres managed policy.
+# Flatpak tu jen pripravi Flathub remote; dalsi repa (Flathub-beta,
+# GNOME Nightly, Fedora) si uzivatel prida v KucLab Store.
+type: default-flatpaks
+configurations:
+  - notify: false
+    scope: system
+  - scope: user

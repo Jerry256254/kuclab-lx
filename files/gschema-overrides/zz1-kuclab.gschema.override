@@ -1,0 +1,28 @@
+# KucLab LX — vychozi nastaveni GNOME
+# Agent je prvni v docku, tmavy rezim, tap-to-click, Inter.
+
+[org.gnome.shell]
+favorite-apps=['org.kuclab.AgentChat.desktop', 'brave-browser.desktop', 'org.kuclab.Store.desktop', 'org.kuclab.Manager.desktop', 'app.ptyxis.Ptyxis.desktop', 'org.gnome.Settings.desktop']
+
+[org.gnome.desktop.interface]
+gtk-theme='adw-gtk3'
+color-scheme='prefer-dark'
+font-name='Inter 11'
+document-font-name='Inter 11'
+monospace-font-name='Adwaita Mono 11'
+
+[org.gnome.desktop.peripherals.touchpad]
+tap-to-click=true
+natural-scroll=true
+
+[org.gnome.shell.extensions.dash-to-dock]
+dock-position='BOTTOM'
+dash-max-icon-size=40
+show-trash=false
+show-mounts=true
+
+[org.gnome.desktop.privacy]
+report-technical-problems=false
+
+[org.gnome.desktop.sound]
+event-sounds=false

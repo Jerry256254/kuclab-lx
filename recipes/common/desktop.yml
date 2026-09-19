@@ -1,0 +1,14 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+# GNOME vzhled a chovani: vse pres gschema overrides (rychle, bez sluzeb).
+# Dash-to-dock a dalsi rozsireni uz jsou v Bluefin zakladu; nase rozsireni
+# (tlacitko agenta) se dodava pres files/ v kuclab.yml.
+modules:
+  - type: gschema-overrides
+    include:
+      - zz1-kuclab.gschema.override
+
+  - type: fonts
+    fonts:
+      google-fonts:
+        - Inter

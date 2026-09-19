@@ -1,0 +1,296 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kuclab 1.0\n"
+"Language: en\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "API adresa"
+msgstr "API base URL"
+
+msgid "API klíč"
+msgstr "API key"
+
+msgid "API model"
+msgstr "API model"
+
+msgid "Agent chce použít nástroj"
+msgstr "The agent wants to use a tool"
+
+msgid "Aktivní zdroje"
+msgstr "Active sources"
+
+msgid "Aplikace"
+msgstr "Applications"
+
+msgid "Běh modelu"
+msgstr "Model runtime"
+
+msgid "Běžící služby"
+msgstr "Running services"
+
+msgid "Chyba"
+msgstr "Error"
+
+msgid "Chyba přepisu"
+msgstr "Transcription error"
+
+msgid "Chybí umu-run (nainstaluje se s obrazem)."
+msgstr "umu-run is missing (it ships with the image)."
+
+msgid "Co smí agent dělat"
+msgstr "What the agent may do"
+
+msgid "Disky"
+msgstr "Disks"
+
+msgid "Hlas"
+msgstr "Voice"
+
+msgid "Hlasové nástroje nejsou nainstalované."
+msgstr "Voice tools are not installed."
+
+msgid "Hlasový režim"
+msgstr "Voice mode"
+
+msgid "Hlasový vstup"
+msgstr "Voice input"
+
+msgid "Hledat aplikace…"
+msgstr "Search apps…"
+
+msgid "Hledám…"
+msgstr "Searching…"
+
+msgid "Hotovo"
+msgstr "Done"
+
+msgid "Hotovo."
+msgstr "Done."
+
+msgid "Info o systému"
+msgstr "System info"
+
+msgid "Instalace aplikací"
+msgstr "Installing apps"
+
+msgid "Instalovat"
+msgstr "Install"
+
+msgid "Instaluji…"
+msgstr "Installing…"
+
+msgid "Jazyk hlasu"
+msgstr "Voice language"
+
+msgid "Je potřeba restart"
+msgstr "Restart required"
+
+msgid "Konzervativní"
+msgstr "Conservative"
+
+msgid "KucLab Agent"
+msgstr "KucLab Agent"
+
+msgid "KucLab Manager"
+msgstr "KucLab Manager"
+
+msgid "KucLab Store"
+msgstr "KucLab Store"
+
+msgid "Lokální (Ollama)"
+msgstr "Local (Ollama)"
+
+msgid "Lokální model"
+msgstr "Local model"
+
+msgid "Model"
+msgstr "Model"
+
+msgid "Nahrávám… klikněte znovu pro ukončení"
+msgstr "Recording… click again to stop"
+
+msgid "Nahrávání se nezdařilo."
+msgstr "Recording failed."
+
+msgid "Nalezeno: %d"
+msgstr "Found: %d"
+
+msgid "Napište dotaz…"
+msgstr "Type a question…"
+
+msgid "Naposledy spuštěné"
+msgstr "Recently launched"
+
+msgid "Nastavení"
+msgstr "Settings"
+
+msgid "Nastavení agenta"
+msgstr "Agent settings"
+
+msgid "Nejprve počkejte na stažení Protonu."
+msgstr "Please wait for Proton to finish downloading first."
+
+msgid "Nerozuměl jsem, zkuste to prosím znovu."
+msgstr "I didn't catch that, please try again."
+
+msgid "Obchod"
+msgstr "Store"
+
+msgid "Obnovit katalog"
+msgstr "Refresh catalog"
+
+msgid "Obnovuji katalog…"
+msgstr "Refreshing catalog…"
+
+msgid "Odebrat"
+msgstr "Remove"
+
+msgid "Odebrat aplikaci?"
+msgstr "Remove this app?"
+
+msgid "Odebráno."
+msgstr "Removed."
+
+msgid "Odebírání aplikací"
+msgstr "Removing apps"
+
+msgid "Odeslat"
+msgstr "Send"
+
+msgid "Oprávnění"
+msgstr "Permissions"
+
+msgid "Otevírání aplikací"
+msgstr "Opening apps"
+
+msgid "Paměť"
+msgstr "Memory"
+
+msgid "Plná důvěra"
+msgstr "Full trust"
+
+msgid "Poskytovatel"
+msgstr "Provider"
+
+msgid "Povolit"
+msgstr "Allow"
+
+msgid "Povolit hlas"
+msgstr "Enable voice"
+
+msgid "Procesor"
+msgstr "Processor"
+
+msgid "Profil"
+msgstr "Profile"
+
+msgid "Profily: konzervativní = vše zakázáno, vyvážený = ptát se, plná důvěra = vše povoleno."
+msgstr "Profiles: conservative = deny all, balanced = ask, full trust = allow all."
+
+msgid "Proton-GE"
+msgstr "Proton-GE"
+
+msgid "Přehled"
+msgstr "Overview"
+
+msgid "Přemýšlím…"
+msgstr "Thinking…"
+
+msgid "Přepisuji…"
+msgstr "Transcribing…"
+
+msgid "Přidat"
+msgstr "Add"
+
+msgid "Přidat zdroj"
+msgstr "Add a source"
+
+msgid "Přidáno"
+msgstr "Added"
+
+msgid "Připraven"
+msgstr "Ready"
+
+msgid "Připraveno"
+msgstr "Ready"
+
+msgid "Příprava…"
+msgstr "Preparing…"
+
+msgid "Rozumím"
+msgstr "Got it"
+
+msgid "Spouštění příkazů"
+msgstr "Running commands"
+
+msgid "Spustit"
+msgstr "Launch"
+
+msgid "Spustit .exe…"
+msgstr "Run .exe…"
+
+msgid "Stahování z webu"
+msgstr "Web downloads"
+
+msgid "Stahování…"
+msgstr "Downloading…"
+
+msgid "Stahuji Proton-GE (jen poprvé)…"
+msgstr "Downloading Proton-GE (first run only)…"
+
+msgid "Stav"
+msgstr "Status"
+
+msgid "Systém"
+msgstr "System"
+
+msgid "Vyberte .exe"
+msgstr "Select an .exe file"
+
+msgid "Využití"
+msgstr "Usage"
+
+msgid "Vyvážený"
+msgstr "Balanced"
+
+msgid "Vzdálené API (OpenAI-kompatibilní)"
+msgstr "Remote API (OpenAI-compatible)"
+
+msgid "Výpis adresáře"
+msgstr "Directory listing"
+
+msgid "Zakázat"
+msgstr "Deny"
+
+msgid "Zamítnout"
+msgstr "Deny"
+
+msgid "Zastavit"
+msgstr "Stop"
+
+msgid "Zdroje aplikací"
+msgstr "App sources"
+
+msgid "Zeptat se"
+msgstr "Ask"
+
+msgid "Změna systémových balíčků se projeví po restartu."
+msgstr "System package changes apply after a restart."
+
+msgid "Zrušit"
+msgstr "Cancel"
+
+msgid "Zápis souborů"
+msgstr "Writing files"
+
+msgid "chráněno"
+msgstr "protected"
+
+msgid "provedeno"
+msgstr "done"
+
+msgid "zamítnuto"
+msgstr "denied"
+
+msgid "Čtení souborů"
+msgstr "Reading files"
