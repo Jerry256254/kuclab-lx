@@ -7,7 +7,6 @@ image-version: latest
 
 modules:
   - from-file: common/base.yml
-  - from-file: common/drivers.yml
   - from-file: common/desktop.yml
   - from-file: common/packages.yml
   - from-file: common/flatpaks.yml

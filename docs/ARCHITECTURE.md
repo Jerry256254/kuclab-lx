@@ -12,12 +12,18 @@
 ## Vrstvy obrazu
 
 1. `base.yml` — kargs, fstrim.
-2. `drivers.yml` — akmods (gamepady, Razer, Framework, v4l2loopback) + NVIDIA open driver.
-3. `desktop.yml` — gschema overrides (dock, tmavý režim, Inter) + fonty.
-4. `packages.yml` — ptyxis, Brave (oficiální RPM repo), Mullvad VPN, wine/umu, GTK knihovny; pryč `gnome-software`.
-5. `flatpaks.yml` — jen příprava Flathub repa (prohlížeč je nativní Brave s DuckDuckGo přes `/etc/brave/policies`).
-6. `kuclab.yml` — naše soubory, binárky (Ollama, whisper, Piper), locales, služby.
-7. `branding.yml` — `/etc/os-release` (schválně poslední).
+2. `desktop.yml` — gschema overrides (dock, tmavý režim, Inter) + fonty.
+3. `packages.yml` — ptyxis, Brave (oficiální RPM repo), Mullvad VPN, wine/umu, GTK knihovny; pryč `gnome-software`.
+4. `flatpaks.yml` — jen příprava Flathub repa (prohlížeč je nativní Brave s DuckDuckGo přes `/etc/brave/policies`).
+5. `kuclab.yml` — naše soubory, binárky (Ollama, whisper, Piper), locales, služby.
+6. `branding.yml` — `/etc/os-release` (schválně poslední).
+
+Pozn.: vlastní `akmods` vrstva v receptu záměrně není. Bluefin base
+už obsahuje ublue kmoduly (gamepady, Razer, Framework, v4l2loopback…)
+a externí akmods repo bývá postavené pro novější kernel než base —
+instalace pak padá na depsolve konfliktu (`kernel-uname-r` skew).
+Proprietární NVIDIA driver v základu není (funguje nouveau);
+varianta obrazu na `bluefin-nvidia` je plánovaný follow-up (viz níže).
 
 ## AI agent
 
@@ -68,6 +74,7 @@ python3 -m unittest discover -s tests  # python testy
 ## Co zbývá před vydáním
 
 1. Build v CI + nabootovat ISO na 2–3 strojích (Intel/AMD/NVIDIA).
+2. NVIDIA varianta obrazu na `bluefin-nvidia` (druhý recept + CI matrix).
 2. Změřit idle RAM a doladit služby.
 3. Doplnit němčinu/překlady dle potřeby.
 4. Podepsat obraz (cosign klíče v CI secrets).
