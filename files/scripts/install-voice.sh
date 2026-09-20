@@ -1,34 +1,27 @@
 #!/usr/bin/env bash
-# Hlasove nastroje agenta: whisper.cpp (STT) + Piper (TTS).
-# Binarky do /usr/lib/kuclab/bin, modely se stahuji az pri prvnim pouziti.
+# Hlasove nastroje agenta: whisper.cpp (STT) + Piper (TTS) vcetne knihoven.
+# Obe binarky maji RUNPATH $ORIGIN, takze knihovny musi lezet vedle nich.
+# Modely se stahuji az pri prvnim pouziti (viz agent/voice.py).
 set -euo pipefail
 
 BIN=/usr/lib/kuclab/bin
+WHISPER_URL="${WHISPER_URL:-https://github.com/ggml-org/whisper.cpp/releases/download/b5130/whisper-bin-ubuntu-x64.tar.gz}"
+PIPER_URL="${PIPER_URL:-https://github.com/rhasspy/piper/releases/download/2023.11.14-2/piper_linux_x86_64.tar.gz}"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 mkdir -p "$BIN"
 
 echo "Stahuji whisper.cpp ..."
-WHISPER_URL="https://github.com/ggml-org/whisper.cpp/releases/latest/download/whisper-cpp-ubuntu-22.04-x64.zip"
-curl -fsSL -o "$TMP/whisper.zip" "$WHISPER_URL" || {
-  echo "Varovani: whisper.cpp se nepodarilo stahnout, agent pouzije textovy rezim."
-  WHISPER_URL=""
-}
-if [ -n "${WHISPER_URL}" ] && [ -f "$TMP/whisper.zip" ]; then
-  python3 -c "import zipfile,sys; zipfile.ZipFile('$TMP/whisper.zip').extractall('$TMP/whisper')"
-  find "$TMP/whisper" -name 'whisper-cli' -exec install -m 0755 {} "$BIN/whisper-cli" \;
-fi
+curl -fsSL -o "$TMP/whisper.tgz" "$WHISPER_URL"
+tar -xzf "$TMP/whisper.tgz" -C "$TMP"
+cp -a "$TMP"/whisper-bin-ubuntu-x64/whisper-cli "$TMP"/whisper-bin-ubuntu-x64/lib*.so* "$BIN"/
 
 echo "Stahuji Piper TTS ..."
-PIPER_VER="${PIPER_VERSION:-v1.2.0}"
-PIPER_URL="https://github.com/rhasspy/piper/releases/download/${PIPER_VER}/piper_linux_x86_64.tar.gz"
-curl -fsSL -o "$TMP/piper.tar.gz" "$PIPER_URL" || {
-  echo "Varovani: Piper se nepodarilo stahnout, agent pouzije textovy rezim."
-  PIPER_URL=""
-}
-if [ -f "$TMP/piper.tar.gz" ]; then
-  tar -xzf "$TMP/piper.tar.gz" -C "$TMP"
-  install -m 0755 "$TMP/piper/piper" "$BIN/piper"
-fi
+curl -fsSL -o "$TMP/piper.tgz" "$PIPER_URL"
+tar -xzf "$TMP/piper.tgz" -C "$TMP"
+cp -a "$TMP"/piper/. "$BIN"/
 
-ls -la "$BIN" || true
+echo "Kontrola ..."
+"$BIN/whisper-cli" --help >/dev/null
+"$BIN/piper" --help >/dev/null
+ls "$BIN"
