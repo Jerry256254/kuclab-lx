@@ -20,14 +20,16 @@ install:
     # vpn
     - mullvad-vpn
     # WinShit: Wine/Proton vrstva (umu spousti proton-ge buildy)
+    # umu neni ve Fedora repositarich -> oficialni RPM z GitHub releases
+    # (pri nove Fedore zkontroluj, ze asset pro fc%OS_VERSION% existuje)
     - wine-core
     - winetricks
-    - umu-launcher
+    - https://github.com/Open-Wine-Components/umu-launcher/releases/download/1.4.4/umu-launcher-1.4.4.fc%OS_VERSION%.x86_64.rpm
     # behove knihovny pro KucLab aplikace (GTK4 + GObject introspekce)
     - python3-gobject
     - gtk4
     - libadwaita
-    - libflatpak
+    - flatpak-libs
     - appstream
     - pipewire-utils
 remove:
